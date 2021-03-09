@@ -26,8 +26,8 @@ exports.onAppReady = function onAppReady() {
 	}
 
 	window.webContents.on('new-window', onNewWindow);
-
-	window.webContents.session.webRequest.onBeforeRequest(['http*'], onBeforeRequestHandler);
+// I don't know what this is supposed to do but it causes a weird Javascript error with the newer version of Electron
+//	window.webContents.session.webRequest.onBeforeRequest(['http*'], onBeforeRequestHandler);
 
 	login.handleLoginDialogTry(window);
 	if (config.onlineOfflineReload) {
